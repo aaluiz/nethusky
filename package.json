@@ -1,0 +1,23 @@
+{
+  "name": "husky",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:aaluiz/nethusky.git",
+  "author": "Alan Alves Luiz <alan.luiz@creasp.org.br>",
+  "license": "MIT",
+   "lint-staged": {
+    "*.cs": "dotnet format --include"
+  },
+  "devDependencies": {
+    "husky": "^8.0.0"
+  },
+  "scripts": {
+    "prepare": "husky install/",
+    "preinstall": "dotnet tool restore",
+     "test": "dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=\"lcov%2ccobertura%2copencover\"",
+    "preinstall": "dotnet tool restore"
+  },
+  "dependencies": {
+    "lint-staged": "^13.2.0"
+  }
+}
